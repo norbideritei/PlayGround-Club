@@ -17,5 +17,5 @@ https://norbideritei.github.io/PlayGround-Club/
 - [x] add webpack to the project
 - [ ] create website interface
 - [ ] make it pretty
-- [ ] create the CRUD for the project
+- [ ] create the interface where you can book a fishing place
 - [ ] make it more prettier 😀

@@ -38,3 +38,100 @@ body {
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
+
+#editForm {
+  background-color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 25px;
+}
+
+#search {
+  text-align: center;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: bold;
+  width: 350px;
+}
+
+#table-title {
+  text-align: center;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
+}
+
+#teams {
+  border-collapse: collapse;
+  width: 100%;
+  padding: 5px;
+}
+#teams th {
+  background-color: #79d279;
+  color: white;
+}
+#teams th,
+#teams td {
+  border: 1px solid gray;
+  padding: 5px;
+}
+#teams tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#url,
+#promotion,
+#members,
+#name {
+  width: 100%;
+}
+
+::placeholder {
+  color: #32e70e;
+  opacity: 1;
+}
+
+.loading-mask {
+  position: relative;
+}
+
+.loading-mask::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #00000040;
+  /* rgba(0, 0, 0, 0.25) */
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.loading-mask::after {
+  content: "💠";
+  text-align: center;
+  /* content: ""; */
+
+  position: absolute;
+  border-width: 3px;
+  border-style: solid;
+  border-color: transparent #fff #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+  animation: 2s linear 0s normal none infinite running spin;
+  filter: drop-shadow(0 0 2 rgba(0, 0, 0, 0.33));
+}

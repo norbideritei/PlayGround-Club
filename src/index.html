@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +9,84 @@
   <body>
     <div id="page-title">
       <p id="title">PlayGround Club</p>
-      <button id="main-button">Rezerva aici !</button>
+      <button onclick="hideTable()" id="main-button">Rezerva aici !</button>
     </div>
+    <form
+      id="editForm"
+      action="http://localhost:3000/teams-json/create"
+      method="POST"
+      style="display: none"
+    >
+      <div id="title-search" style="padding: 8px">
+        <p id="table-title">Rezervari Online</p>
+        <input type="search" name="search" id="search" placeholder="Search" />
+      </div>
+      <table id="teams">
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>Members</th>
+            <th>Project Name</th>
+            <th>Project URL</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <input
+                type="text"
+                placeholder="Enter group"
+                name="promotion"
+                id="promotion"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                placeholder="Enter members"
+                name="members"
+                id="members"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                placeholder="Enter project name"
+                name="name"
+                id="name"
+                required
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                placeholder="Enter project URL"
+                name="url"
+                id="url"
+                required
+              />
+            </td>
+            <td>
+              <button type="submit">💾</button>
+              <button type="reset" title="cancel">✖</button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </form>
   </body>
 </html>
+<script>
+  function hideTable() {
+    var x = document.getElementById("editForm");
+    if (x.style.display === "none") {
+      x.style.display = "flex";
+    } else {
+      x.style.display = "none";
+    }
+  }
+</script>

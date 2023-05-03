@@ -9,7 +9,7 @@
   <body>
     <div id="page-title">
       <p id="title">PlayGround Club</p>
-      <button onclick="hideTable()" id="main-button">Rezerva aici !</button>
+      <button onclick="hideTable()" id="main-button">Book now !</button>
     </div>
     <form
       id="editForm"
@@ -18,16 +18,16 @@
       style="display: none"
     >
       <div id="title-search" style="padding: 8px">
-        <p id="table-title">Rezervari Online</p>
+        <p id="table-title">Online Booking</p>
         <input type="search" name="search" id="search" placeholder="Search" />
       </div>
       <table id="teams">
         <thead>
           <tr>
-            <th>Group</th>
-            <th>Members</th>
-            <th>Project Name</th>
-            <th>Project URL</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Phone</th>
+            <th>Fishing Peg</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -37,7 +37,7 @@
             <td>
               <input
                 type="text"
-                placeholder="Enter group"
+                placeholder="Enter last name"
                 name="promotion"
                 id="promotion"
                 required
@@ -46,7 +46,7 @@
             <td>
               <input
                 type="text"
-                placeholder="Enter members"
+                placeholder="Enter first name"
                 name="members"
                 id="members"
                 required
@@ -55,7 +55,7 @@
             <td>
               <input
                 type="text"
-                placeholder="Enter project name"
+                placeholder="Enter phone number"
                 name="name"
                 id="name"
                 required
@@ -64,7 +64,7 @@
             <td>
               <input
                 type="text"
-                placeholder="Enter project URL"
+                placeholder="Enter number of fishing peg"
                 name="url"
                 id="url"
                 required

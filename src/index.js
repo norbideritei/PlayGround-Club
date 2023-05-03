@@ -33,12 +33,7 @@ function getteamsHTML(teams) {
         <td>${promotion}</td>
         <td>${members}</td>
         <td>${name}</td>
-        <td>
-          <a href="${url}" target="_blank">${url.replace(
-        "https://github.com/",
-        ""
-      )}</a>
-        </td>
+        <td>${url}</td>
         <td>
           <a data-id="${id}" class="remove-btn">✖</a>
           <a data-id="${id}" class="edit-btn">&#9998;</a>

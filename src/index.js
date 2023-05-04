@@ -1,15 +1,15 @@
 import {
-  updateTeamRequest,
-  deleteTeamRequest,
-  createTeamRequest,
-  loadTeamsRequest,
+  updateBookingRequest,
+  deleteBookingRequest,
+  createBookingRequest,
+  loadBookingsRequest,
 } from "./requests";
 import { $, sleep, debounce } from "./utilities";
 
-let allTeams = [];
+let allBookings = [];
 let editId;
 
-function readTeam() {
+function readBooking() {
   return {
     promotion: document.getElementById("promotion").value,
     members: document.getElementById("members").value,
@@ -18,15 +18,15 @@ function readTeam() {
   };
 }
 
-function writeTeam({ promotion, members, name, url }) {
+function writeBooking({ promotion, members, name, url }) {
   document.getElementById("promotion").value = promotion;
   document.getElementById("members").value = members;
   document.getElementById("name").value = name;
   document.getElementById("url").value = url;
 }
 
-function getteamsHTML(teams) {
-  return teams
+function getBookingsHTML(bookings) {
+  return bookings
     .map(
       ({ promotion, members, name, url, id }) => `
         <tr>
@@ -43,66 +43,67 @@ function getteamsHTML(teams) {
     .join("");
 }
 
-function loadTeams() {
-  return loadTeamsRequest().then((teams) => {
-    allTeams = teams;
-    displayTeams(teams);
-    return teams;
+function loadBookings() {
+  return loadBookingsRequest().then((bookings) => {
+    allBookings = bookings;
+    displayBookings(bookings);
+    return bookings;
   });
 }
 
-let oldDisplayTeams;
+let oldDisplayBookings;
 
-function displayTeams(teams) {
-  if (oldDisplayTeams === teams) {
+function displayBookings(bookings) {
+  if (oldDisplayBookings === bookings) {
     return;
   }
-  oldDisplayTeams = teams;
-  document.querySelector("#teams tbody").innerHTML = getteamsHTML(teams);
+  oldDisplayBookings = bookings;
+  document.querySelector("#bookings tbody").innerHTML =
+    getBookingsHTML(bookings);
 }
 
 async function onSubmit(e) {
   e.preventDefault();
-  const team = readTeam();
+  const booking = readBooking();
   let status = { success: false };
   if (editId) {
-    team.id = editId;
-    status = await updateTeamRequest(team);
+    booking.id = editId;
+    status = await updateBookingRequest(booking);
     if (status.success) {
-      allTeams = allTeams.map((t) => {
-        if (t.id === team.id) {
+      allBookings = allBookings.map((t) => {
+        if (t.id === booking.id) {
           return {
             ...t,
-            ...team,
+            ...booking,
           };
         }
         return t;
       });
     }
   } else {
-    status = await createTeamRequest(team);
+    status = await createBookingRequest(booking);
     if (status.success) {
-      team.id = status.id;
-      allTeams = [...allTeams, team];
+      booking.id = status.id;
+      allBookings = [...allBookings, booking];
     }
   }
 
   if (status.success) {
-    displayTeams(allTeams);
+    displayBookings(allBookings);
     e.target.reset();
   }
 }
 
 function prepareEdit(id) {
-  const team = allTeams.find((team) => team.id === id);
+  const booking = allBookings.find((booking) => booking.id === id);
   editId = id;
 
-  writeTeam(team);
+  writeBooking(booking);
 }
 
-function searchTeams(search) {
-  return allTeams.filter((team) => {
-    return team.promotion.indexOf(search) > -1;
+function searchBookings(search) {
+  return allBookings.filter((booking) => {
+    return booking.promotion.indexOf(search) > -1;
   });
 }
 
@@ -116,20 +117,19 @@ function initEvents() {
   $("#search").addEventListener(
     "input",
     debounce(function (e) {
-      const teams = searchTeams(e.target.value);
-      displayTeams(teams);
+      const bookings = searchBookings(e.target.value);
+      displayBookings(bookings);
       console.warn("search", e, this, this === e.target);
     }, 300)
   );
 
-  $("#teams tbody").addEventListener("click", async (e) => {
+  $("#bookings tbody").addEventListener("click", async (e) => {
     if (e.target.matches("a.remove-btn")) {
       const id = e.target.dataset.id;
 
-      const status = await deleteTeamRequest(id);
+      const status = await deleteBookingRequest(id);
       if (status.success) {
-        loadTeams();
-        // TODO don't load all teams...
+        loadBookings();
       }
     } else if (e.target.matches("a.edit-btn")) {
       const id = e.target.dataset.id;
@@ -140,7 +140,7 @@ function initEvents() {
 
 $("#editForm").classList.add("loading-mask");
 
-loadTeams().then(async () => {
+loadBookings().then(async () => {
   await sleep(200);
   $("#editForm").classList.remove("loading-mask");
 });

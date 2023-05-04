@@ -26,7 +26,7 @@ body {
   margin: 4px 2px;
   transform: translate(-50%, -50%);
   background-color: #79d279;
-  border: none;
+  border-radius: 12px;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -59,6 +59,11 @@ body {
   width: 350px;
 }
 
+#main-button:hover {
+  background-color: #266215;
+  color: #ffffff;
+}
+
 #table-title {
   text-align: center;
   font-weight: bold;
@@ -66,21 +71,21 @@ body {
   font-size: 30px;
 }
 
-#teams {
+#bookings {
   border-collapse: collapse;
   width: 100%;
   padding: 5px;
 }
-#teams th {
+#bookings th {
   background-color: #79d279;
   color: white;
 }
-#teams th,
-#teams td {
+#bookings th,
+#bookings td {
   border: 1px solid gray;
   padding: 5px;
 }
-#teams tr:nth-child(even) {
+#bookings tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 

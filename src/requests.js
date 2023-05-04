@@ -1,4 +1,4 @@
-export function loadTeamsRequest() {
+export function loadBookingsRequest() {
   return fetch("http://localhost:3000/teams-json", {
     method: "GET",
     headers: {
@@ -7,7 +7,7 @@ export function loadTeamsRequest() {
   }).then((r) => r.json());
 }
 
-export function createTeamRequest(team) {
+export function createBookingRequest(team) {
   return fetch("http://localhost:3000/teams-json/create", {
     method: "POST",
     headers: {
@@ -17,7 +17,7 @@ export function createTeamRequest(team) {
   }).then((r) => r.json());
 }
 
-export function updateTeamRequest(team) {
+export function updateBookingRequest(team) {
   return fetch("http://localhost:3000/teams-json/update", {
     method: "PUT",
     headers: {
@@ -27,7 +27,7 @@ export function updateTeamRequest(team) {
   }).then((r) => r.json());
 }
 
-export function deleteTeamRequest(id) {
+export function deleteBookingRequest(id) {
   return fetch("http://localhost:3000/teams-json/delete", {
     method: "DELETE",
     headers: {

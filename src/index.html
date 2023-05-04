@@ -1,92 +1,92 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PlayGround Club</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div id="page-title">
-      <p id="title">PlayGround Club</p>
-      <button onclick="hideTable()" id="main-button">Book now !</button>
-    </div>
-    <form
-      id="editForm"
-      action="http://localhost:3000/teams-json/create"
-      method="POST"
-      style="display: none"
-    >
-      <div id="title-search" style="padding: 8px">
-        <p id="table-title">Online Booking</p>
-        <input type="search" name="search" id="search" placeholder="Search" />
-      </div>
-      <table id="teams">
-        <thead>
-          <tr>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Phone</th>
-            <th>Fishing Peg</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-        <tfoot>
-          <tr>
-            <td>
-              <input
-                type="text"
-                placeholder="Enter last name"
-                name="promotion"
-                id="promotion"
-                required
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                placeholder="Enter first name"
-                name="members"
-                id="members"
-                required
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                placeholder="Enter phone number"
-                name="name"
-                id="name"
-                required
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                placeholder="Enter number of fishing peg"
-                name="url"
-                id="url"
-                required
-              />
-            </td>
-            <td>
-              <button type="submit">💾</button>
-              <button type="reset" title="cancel">✖</button>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-    </form>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PlayGround Club</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div id="page-title">
+			<p id="title">PlayGround Club</p>
+			<button onclick="hideTable()" id="main-button">Book now !</button>
+		</div>
+		<form
+			id="editForm"
+			action="http://localhost:3000/teams-json/create"
+			method="POST"
+			style="display: none"
+		>
+			<div id="title-search" style="padding: 8px">
+				<p id="table-title">Online Booking</p>
+				<input type="search" name="search" id="search" placeholder="Search" />
+			</div>
+			<table id="teams">
+				<thead>
+					<tr>
+						<th>Last Name</th>
+						<th>First Name</th>
+						<th>Phone</th>
+						<th>Fishing Peg</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+				<tfoot>
+					<tr>
+						<td>
+							<input
+								type="text"
+								placeholder="Enter last name"
+								name="promotion"
+								id="promotion"
+								required
+							/>
+						</td>
+						<td>
+							<input
+								type="text"
+								placeholder="Enter first name"
+								name="members"
+								id="members"
+								required
+							/>
+						</td>
+						<td>
+							<input
+								type="text"
+								placeholder="Enter phone number"
+								name="name"
+								id="name"
+								required
+							/>
+						</td>
+						<td>
+							<input
+								type="text"
+								placeholder="Enter number of fishing peg"
+								name="url"
+								id="url"
+								required
+							/>
+						</td>
+						<td>
+							<button type="submit">💾</button>
+							<button type="reset" title="cancel">✖</button>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</body>
 </html>
 <script>
-  function hideTable() {
-    var x = document.getElementById("editForm");
-    if (x.style.display === "none") {
-      x.style.display = "flex";
-    } else {
-      x.style.display = "none";
-    }
-  }
+	function hideTable() {
+		var x = document.getElementById("editForm");
+		if (x.style.display === "none") {
+			x.style.display = "flex";
+		} else {
+			x.style.display = "none";
+		}
+	}
 </script>

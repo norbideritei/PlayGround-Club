@@ -7,6 +7,7 @@ Here you can come fishing with your family and your friends. Book directly on th
 ## Team
 
 - [Deritei Norbert](https://github.com/norbideritei)
+- [Valean Marius-Laurentiu](https://github.com/MariusValean)
 
 ## Demo
 

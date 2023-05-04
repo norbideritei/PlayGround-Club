@@ -116,10 +116,9 @@ function initEvents() {
 
   $("#search").addEventListener(
     "input",
-    debounce(function (e) {
+    debounce((e) => {
       const bookings = searchBookings(e.target.value);
       displayBookings(bookings);
-      console.warn("search", e, this, this === e.target);
     }, 300)
   );
 

@@ -11,29 +11,29 @@ let editId;
 
 function readBooking() {
   return {
-    promotion: document.getElementById("promotion").value,
-    members: document.getElementById("members").value,
-    name: document.getElementById("name").value,
-    url: document.getElementById("url").value,
+    lname: document.getElementById("lname").value,
+    fname: document.getElementById("fname").value,
+    phone: document.getElementById("phone").value,
+    peg: document.getElementById("peg").value,
   };
 }
 
-function writeBooking({ promotion, members, name, url }) {
-  document.getElementById("promotion").value = promotion;
-  document.getElementById("members").value = members;
-  document.getElementById("name").value = name;
-  document.getElementById("url").value = url;
+function writeBooking({ lname, fname, phone, peg }) {
+  document.getElementById("lname").value = lname;
+  document.getElementById("fname").value = fname;
+  document.getElementById("phone").value = phone;
+  document.getElementById("peg").value = peg;
 }
 
 function getBookingsHTML(bookings) {
   return bookings
     .map(
-      ({ promotion, members, name, url, id }) => `
+      ({ lname, fname, phone, peg, id }) => `
         <tr>
-        <td>${promotion}</td>
-        <td>${members}</td>
-        <td>${name}</td>
-        <td>${url}</td>
+        <td>${lname}</td>
+        <td>${fname}</td>
+        <td>${phone}</td>
+        <td>${peg}</td>
         <td>
           <a data-id="${id}" class="remove-btn">✖</a>
           <a data-id="${id}" class="edit-btn">&#9998;</a>
@@ -103,7 +103,7 @@ function prepareEdit(id) {
 
 function searchBookings(search) {
   return allBookings.filter((booking) => {
-    return booking.promotion.indexOf(search) > -1;
+    return booking.lname.indexOf(search) > -1;
   });
 }
 

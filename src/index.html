@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PlayGround Club</title>
     <link rel="stylesheet" href="./style.css" />
+    <style>
+      .animation {
+      }
+    </style>
   </head>
   <body>
     <div id="page-title">
-      <p id="title">PlayGround Club</p>
-      <button onclick="hideTable()" id="main-button">Book now !</button>
+      <p id="title" style="font-size: 88px">PlayGround Club</p>
+      <button
+        style="padding: 15px 32px; top: 50%"
+        onclick="hideTable()"
+        id="main-button"
+      >
+        Book now !
+      </button>
     </div>
     <form
       id="editForm"
@@ -93,10 +103,21 @@
 <script>
   function hideTable() {
     var x = document.getElementById("editForm");
+    var y = document.getElementById("page-title");
+    var title = document.getElementById("title");
+    var button = document.getElementById("main-button");
     if (x.style.display === "none") {
       x.style.display = "flex";
+      y.style.marginTop = "25px";
+      title.style.fontSize = "40px";
+      button.style.padding = "10px 22px";
+      button.style.top = "30%";
     } else {
       x.style.display = "none";
+      y.style.marginTop = "280px";
+      title.style.fontSize = "88px";
+      button.style.padding = "15px 32px";
+      button.style.top = "50%";
     }
   }
 </script>

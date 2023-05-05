@@ -143,3 +143,17 @@ a {
 input::placeholder {
   font-weight: bold;
 }
+
+#user-button {
+  font-size: 16px;
+  margin: 4px 2px;
+  background-color: #55903d;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 20px;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}

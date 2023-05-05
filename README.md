@@ -20,3 +20,6 @@ https://norbideritei.github.io/PlayGround-Club/
 - [x] make it pretty
 - [x] create the interface where you can book a fishing place
 - [x] make it more prettier 😀
+- [x] Transition when the button is clicked
+- [x] Change the node api
+- [] Hide phone number and name when you are on the user.

@@ -19,83 +19,85 @@
         Book now !
       </button>
     </div>
-    <form
-      id="editForm"
-      action="http://localhost:3000/teams-json/create"
-      method="POST"
-      style="display: none"
-    >
-      <div id="title-search" style="padding: 8px">
-        <p id="table-title">Online Booking</p>
-        <input
-          type="search"
-          name="search"
-          id="search"
-          autocomplete="off"
-          placeholder="Search"
-        />
-      </div>
-      <table id="bookings">
-        <thead>
-          <tr>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Phone</th>
-            <th>Fishing Peg</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-        <tfoot>
-          <tr>
-            <td>
-              <input
-                type="text"
-                autocomplete="off"
-                placeholder="Enter last name"
-                name="lname"
-                id="lname"
-                required
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                autocomplete="off"
-                placeholder="Enter first name"
-                name="fname"
-                id="fname"
-                required
-              />
-            </td>
-            <td>
-              <input
-                type="number"
-                autocomplete="off"
-                placeholder="Enter phone number"
-                name="phone"
-                id="phone"
-                required
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                autocomplete="off"
-                placeholder="Enter fishing peg"
-                name="peg"
-                id="peg"
-                required
-              />
-            </td>
-            <td>
-              <button type="submit">💾</button>
-              <button type="reset" title="cancel">✖</button>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-    </form>
+    <div style="position: absolute; width: 100%">
+      <form
+        id="editForm"
+        action="http://localhost:3000/teams-json/create"
+        method="POST"
+        style="display: none"
+      >
+        <div id="title-search" style="padding: 8px">
+          <p id="table-title">Online Booking</p>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            autocomplete="off"
+            placeholder="Search"
+          />
+        </div>
+        <table id="bookings">
+          <thead>
+            <tr>
+              <th>Last Name</th>
+              <th>First Name</th>
+              <th>Phone</th>
+              <th>Fishing Peg</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Enter last name"
+                  name="lname"
+                  id="lname"
+                  required
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Enter first name"
+                  name="fname"
+                  id="fname"
+                  required
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  autocomplete="off"
+                  placeholder="Enter phone number"
+                  name="phone"
+                  id="phone"
+                  required
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Enter fishing peg"
+                  name="peg"
+                  id="peg"
+                  required
+                />
+              </td>
+              <td>
+                <button type="submit">💾</button>
+                <button type="reset" title="cancel">✖</button>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </form>
+    </div>
   </body>
 </html>
 <script>

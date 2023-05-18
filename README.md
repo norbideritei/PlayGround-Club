@@ -13,6 +13,11 @@ Here you can come fishing with your family and your friends. Book directly on th
 
 https://norbideritei.github.io/PlayGround-Club/
 
+## Install
+
+- 1. run "npm i" in the console in the directory of this project
+- 2. run "npm start" after you started node-api
+
 ## TODO:
 
 - [x] add webpack to the project
@@ -22,4 +27,4 @@ https://norbideritei.github.io/PlayGround-Club/
 - [x] make it more prettier 😀
 - [x] Transition when the button is clicked
 - [x] Change the node api
-- [] Hide phone number and name when you are on the user.
+- [ ] Hide phone number and name when you are on the user.
